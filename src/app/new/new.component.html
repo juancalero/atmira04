@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Sign In</h5>
+          <form class="form-signin" [formGroup]="myForm" (ngSubmit)="sendForm()">
+            <div class="form-label-group">
+              <input formControlName="nombre" type="text" id="inputNombre" class="form-control" placeholder="Nombre"
+                required autofocus>
+              <label for="inputNombre">Nombre</label>
+            </div>
+
+            <div class="form-label-group">
+              <input formControlName="nombre" type="apellidos" id="inputApellidos" class="form-control"
+                placeholder="Apellidos" required>
+              <label for="inputApellidos">Apellidos</label>
+            </div>
+
+            <div class="form-label-group">
+              <input formControlName="direccion" type="direccion" id="inputDireccion" class="form-control"
+                placeholder="Dirección">
+              <label for="inputDireccion">Dirección</label>
+            </div>
+
+            <div class="form-label-group">
+              <input formControlName="telefono" type="telefono" id="inputTelefono" class="form-control"
+                placeholder="Teléfono">
+              <label for="inputTelefono">Teléfono</label>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+            <p>{{ this.myForm.getError() }}</p>
+            <p>{{ this.myForm.status | json }}</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

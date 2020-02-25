@@ -25,7 +25,10 @@ export class UserListComponent implements OnInit {
     });
   }
 
-
+  showInfo(user: User) {
+    console.log("test");
+    this.router.navigate(['user-detail', {id: user}]);
+  }
 
 
 }

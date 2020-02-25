@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
   //uri = '/users';
-  uri = 'http://localhost:8080/users';
+  uri = 'http://localhost:8080/users'; // alta en http://localhost:8080/users/add, se le pasa objeto nombre, apell, etc
+  uriAdd = 'http://localhost:8080/users/add';
 
   constructor(private http: HttpClient) { }
 
@@ -18,5 +19,10 @@ export class UserService {
            .get(`${this.uri}`);
   }
 
+  addUser(user) {
+    return this
+    .http
+    .post(`${this.uriAdd}`, user).toPromise().then((data)=>console.log(data));
+  }
   
 }

@@ -10,7 +10,7 @@
   </thead>
 
   <tbody>
-      <tr *ngFor="let user of users;let i = index">
+  <tr *ngFor="let user of users;let i = index" (click)="showInfo(user)">
           <td>{{ user.nombre }}</td>
           <td>{{ user.apellidos }}</td>
           <td>{{ user.direccion }}</td>
